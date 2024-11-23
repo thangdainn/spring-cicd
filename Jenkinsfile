@@ -22,8 +22,8 @@ pipeline {
 
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
-                    sh 'docker build -t thanngit@gmail.com/thangIT3@ .'
-                    sh 'docker push thanngit@gmail.com/thangIT3@'
+                    sh 'docker build -t khaliddinh/springboot .'
+                    sh 'docker push khaliddinh/springboot'
                 }
             }
         }
@@ -54,7 +54,7 @@ pipeline {
                 sh 'docker container run -d --rm --name khalid-springboot -p 8081:8080 --network dev khaliddinh/springboot'
             }
         }
- 
+
     }
     post {
         // Clean after build
